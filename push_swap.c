@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 14:47:06 by britela-          #+#    #+#             */
-/*   Updated: 2025/07/24 19:17:01 by britela-         ###   ########.fr       */
+/*   Updated: 2025/07/24 19:46:17 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	main(int argc, char *argv[])
 {
 	int	nb;
 	int	i;
+	int	entier;
 
 	i = 1;
 	if (argc <= 1)
@@ -84,7 +85,6 @@ int	main(int argc, char *argv[])
 		}
 	}
 
-	int	entier;
 	if (nb == 1)
 	{
 		printf ("ok, que des nombres");
