@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 14:47:06 by britela-          #+#    #+#             */
-/*   Updated: 2025/07/24 19:01:21 by britela-         ###   ########.fr       */
+/*   Updated: 2025/07/24 19:17:01 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,33 @@ int	ft_nbr_valide(char *str)
 		return (0);
 }
 
+int	ft_atoi(const char *nptr)
+{
+	int	i;
+	int	sign;
+	int	res;
+
+	i = 0;
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] < 14))
+	{
+		i++;
+	}
+	sign = 1;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
+	}
+	res = 0;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = res * 10 + (nptr[i] - 48);
+		i++;
+	}
+	res = res * sign;
+	return (res);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -57,13 +84,15 @@ int	main(int argc, char *argv[])
 		}
 	}
 
+	int	entier;
 	if (nb == 1)
 	{
 		printf ("ok, que des nombres");
 		i = 0;
 		while (i != argc)
 		{
-			printf("%s\n", argv[i]);
+			entier = ft_atoi(argv[i]);
+			printf("argv[%d] = %s -> %d\n",i ,argv[i], entier);
 			i++;
 		}
 	}
