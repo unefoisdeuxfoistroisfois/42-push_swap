@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 14:47:06 by britela-          #+#    #+#             */
-/*   Updated: 2025/07/24 19:46:17 by britela-         ###   ########.fr       */
+/*   Updated: 2025/07/25 16:14:13 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ int	main(int argc, char *argv[])
 		printf("ciao");
 		return (-1);
 	}
-	else
+	//SI arguments sans ""
+	else if (argc > 2)
 	{
 		while (i != argc && nb != 0)
 		{
@@ -84,15 +85,19 @@ int	main(int argc, char *argv[])
 			i++;
 		}
 	}
+	//SINON arguments avec ""
+	else if (argc == 2)
+	{
 
+	}
 	if (nb == 1)
 	{
-		printf ("ok, que des nombres");
-		i = 0;
+		printf ("ok, que des nombres\n");
+		i = 1;
 		while (i != argc)
 		{
 			entier = ft_atoi(argv[i]);
-			printf("argv[%d] = %s -> %d\n",i ,argv[i], entier);
+			printf("argv[%d] = %s (chaine) -> %d (entier) \n",i ,argv[i], entier);
 			i++;
 		}
 	}
